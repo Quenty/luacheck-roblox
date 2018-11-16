@@ -27,7 +27,6 @@ Here are some examples of the .luacheck in action. Traditional .luacheckrc files
 ## Run and updating
 To run you need Lua (5.1 or higher). Running the script will pull the latest version of the Roblox API and then pull in the latest Enums and game/workspace properties.
 
-
 ## Usage
 You can copy the contents of `roblox_standard.lua` into your `.luacheckrc`
 
