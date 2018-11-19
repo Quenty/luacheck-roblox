@@ -51,6 +51,18 @@ local function def_fields(field_list)
    return { fields = fields }
 end
 
+local enum = def_fields({"Value", "Name"})
+
+local function def_enum(field_list)
+   local fields = {}
+
+   for _, field in ipairs(field_list) do
+      fields[field] = enum
+   end
+
+   return { fields = fields }
+end
+
 stds.roblox = {]]
 	table.insert(output, HEAD)
 end
@@ -104,7 +116,7 @@ local function write_enums(indent, api, output)
 	table.insert(output, indent .. TAB .. "fields = {")
 
 	for _, item in pairs(api.Enums) do
-		local fields = write_fields(extract_enum_names(item.Items), indent .. TAB:rep(2), item.Name .. " = def_fields({")
+		local fields = write_fields(extract_enum_names(item.Items), indent .. TAB:rep(2), item.Name .. " = def_enum({")
 		for i=1, #fields do
 			table.insert(output, fields[i])
 		end
