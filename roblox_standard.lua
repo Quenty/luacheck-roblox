@@ -1,5 +1,5 @@
 local empty = {}
-local read_write = { read_only = false }
+local read_write = { read_only = false, other_fields = true }
 local read_only = { read_only = true }
 
 local function def_fields(field_list)
