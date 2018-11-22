@@ -27,7 +27,6 @@ end
 stds.roblox = {
     globals = {
         script = {
-            read_only = true,
             other_fields = true,
             fields = {
                 Source = read_write;
@@ -68,7 +67,6 @@ stds.roblox = {
             }
         },
         game = {
-            read_only = true,
             other_fields = true,
             fields = {
                 CreatorId = read_only;
@@ -142,7 +140,6 @@ stds.roblox = {
             }
         },
         workspace = {
-            read_only = true,
             other_fields = true,
             fields = {
                 AllowThirdPartySales = read_write;

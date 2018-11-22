@@ -153,7 +153,6 @@ local function write_class(output, indent, name, class_cache, class_name)
 	local members = get_all_members(class_cache, class_name)
 
 	table.insert(output, indent .. name .. " = {")
-	table.insert(output, indent .. TAB .. "read_only = true,")
 	table.insert(output, indent .. TAB .. "other_fields = true,")
 	table.insert(output, indent .. TAB .. "fields = {")
 
