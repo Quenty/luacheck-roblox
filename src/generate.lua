@@ -148,14 +148,14 @@ local function has_tag(tags, value)
 	return false
 end
 
---- Used for datamodel which is a global variable
+--- Used for script, datamodel, and workspace which are global variables
 local function write_class(output, indent, name, class_cache, class_name)
 	local members = get_all_members(class_cache, class_name)
 
 	table.insert(output, indent .. name .. " = {")
-	table.insert(output, indent .. TAB .. "readonly = true,")
+	table.insert(output, indent .. TAB .. "read_only = true,")
 	table.insert(output, indent .. TAB .. "fields = {")
-
+	
 	for _, member in pairs(members) do
 		if not has_tag(member.Tags, "Deprecated") then
 			local mode = "read_write";
