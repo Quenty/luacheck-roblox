@@ -154,12 +154,13 @@ local function write_class(output, indent, name, class_cache, class_name)
 
 	table.insert(output, indent .. name .. " = {")
 	table.insert(output, indent .. TAB .. "read_only = true,")
+	table.insert(output, indent .. TAB .. "other_fields = true,")
 	table.insert(output, indent .. TAB .. "fields = {")
-	
+
 	for _, member in pairs(members) do
 		if not has_tag(member.Tags, "Deprecated") then
 			local mode = "read_write";
-			if has_tag(member, "ReadOnly") then
+			if has_tag(member.Tags, "ReadOnly") then
 				mode = "read_only";
 			end
 			local output_type = member.Name .. (" = %s;"):format(mode)
