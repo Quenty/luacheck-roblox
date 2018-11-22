@@ -330,6 +330,7 @@ local function write_globals(indent, output, class_cache)
 
 	write_class(output, indent .. TAB, "script", class_cache, "Script")
 	write_class(output, indent .. TAB, "game", class_cache, "DataModel")
+	write_class(output, indent .. TAB, "workspace", class_cache, "Workspace")
 
 	table.insert(output, indent .. "},")
 end
