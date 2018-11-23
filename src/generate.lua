@@ -38,7 +38,8 @@ end
 
 local function write_head(output)
 	local HEAD = [[local empty = {}
-local read_write = { read_only = false, other_fields = true }
+local read_write = { read_only = false }
+local read_write_class = { read_only = false, other_fields = true }
 local read_only = { read_only = true }
 
 local function def_fields(field_list)
@@ -148,6 +149,11 @@ local function has_tag(tags, value)
 	return false
 end
 
+local function is_value_category(member,category)
+	return 	member.ValueType and 
+			member.ValueType.Category == category -- only compare category, as classname can be specific, but luacheck can't infer that statically
+end
+
 --- Used for script, datamodel, and workspace which are global variables
 local function write_class(output, indent, name, class_cache, class_name)
 	local members = get_all_members(class_cache, class_name)
@@ -158,9 +164,11 @@ local function write_class(output, indent, name, class_cache, class_name)
 
 	for _, member in pairs(members) do
 		if not has_tag(member.Tags, "Deprecated") then
-			local mode = "read_write";
+			local mode = "read_write"; -- default mode
 			if has_tag(member.Tags, "ReadOnly") then
 				mode = "read_only";
+			elseif is_value_category(member, "Class") then -- is not readonly and the member type a roblox class?
+				mode = "read_write_class"
 			end
 			local output_type = member.Name .. (" = %s;"):format(mode)
 			table.insert(output, indent .. TAB:rep(2) .. output_type)

@@ -1,5 +1,6 @@
 local empty = {}
-local read_write = { read_only = false, other_fields = true }
+local read_write = { read_only = false }
+local read_write_class = { read_only = false, other_fields = true }
 local read_only = { read_only = true }
 
 local function def_fields(field_list)
@@ -33,12 +34,12 @@ stds.roblox = {
                 GetHash = read_write;
                 Disabled = read_write;
                 LinkedSource = read_write;
-                CurrentEditor = read_write;
+                CurrentEditor = read_write_class;
                 Archivable = read_write;
                 ClassName = read_only;
                 DataCost = read_only;
                 Name = read_write;
-                Parent = read_write;
+                Parent = read_write_class;
                 RobloxLocked = read_write;
                 ClearAllChildren = read_write;
                 Clone = read_write;
@@ -111,7 +112,7 @@ stds.roblox = {
                 ClassName = read_only;
                 DataCost = read_only;
                 Name = read_write;
-                Parent = read_write;
+                Parent = read_write_class;
                 RobloxLocked = read_write;
                 ClearAllChildren = read_write;
                 Clone = read_write;
@@ -144,7 +145,7 @@ stds.roblox = {
             fields = {
                 AllowThirdPartySales = read_write;
                 AutoJointsMode = read_write;
-                CurrentCamera = read_write;
+                CurrentCamera = read_write_class;
                 DistributedGameTime = read_write;
                 FallenPartsDestroyHeight = read_write;
                 FilteringEnabled = read_write;
@@ -178,7 +179,7 @@ stds.roblox = {
                 UnjoinFromOutsiders = read_write;
                 ZoomToExtents = read_write;
                 PhysicsAnalyzerIssuesFound = read_write;
-                PrimaryPart = read_write;
+                PrimaryPart = read_write_class;
                 BreakJoints = read_write;
                 GetBoundingBox = read_write;
                 GetExtentsSize = read_write;
@@ -191,7 +192,7 @@ stds.roblox = {
                 ClassName = read_only;
                 DataCost = read_only;
                 Name = read_write;
-                Parent = read_write;
+                Parent = read_write_class;
                 RobloxLocked = read_write;
                 ClearAllChildren = read_write;
                 Clone = read_write;
