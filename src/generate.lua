@@ -299,6 +299,17 @@ local function write_libraries(indent, output)
 		"profilebegin",
 		"profileend",
 	})
+	write_item(output, indent, "utf8", {
+		"char",
+		"codes",
+		"codepoint",
+		"len",
+		"offset",
+		"graphemes",
+		"nfcnormalize",
+		"nfdnormalize",
+		"charpattern",
+	})
 end
 
 local function write_foot(output)

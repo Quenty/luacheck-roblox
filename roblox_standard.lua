@@ -241,6 +241,9 @@ stds.roblox = {
 
         debug = def_fields({"traceback", "profilebegin", "profileend"}),
 
+        utf8 = def_fields({"char", "codes", "codepoint", "len", "offset", "graphemes",
+            "nfcnormalize", "nfdnormalize", "charpattern"}),
+
         -- Types
         Axes = def_fields({"new"}),
 
@@ -411,7 +414,7 @@ stds.roblox = {
                 Font = def_enum({"Legacy", "Arial", "ArialBold", "SourceSans", "SourceSansBold",
                     "SourceSansSemibold", "SourceSansLight", "SourceSansItalic", "Bodoni",
                     "Garamond", "Cartoon", "Code", "Highway", "SciFi", "Arcade", "Fantasy",
-                    "Antique"}),
+                    "Antique", "Gotham", "GothamSemibold", "GothamBold", "GothamBlack"}),
                 FontSize = def_enum({"Size8", "Size9", "Size10", "Size11", "Size12", "Size14",
                     "Size18", "Size24", "Size36", "Size48", "Size28", "Size32", "Size42", "Size60",
                     "Size96"}),
