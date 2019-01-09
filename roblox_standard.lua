@@ -380,6 +380,7 @@ stds.roblox = {
                 CreatorType = def_enum({"User", "Group"}),
                 CurrencyType = def_enum({"Default", "Robux", "Tix"}),
                 CustomCameraMode = def_enum({"Default", "Follow", "Classic"}),
+                DEPRECATED_DebuggerDataModelPreference = def_enum({"Server", "Client"}),
                 DataStoreRequestType = def_enum({"GetAsync", "SetIncrementAsync", "UpdateAsync",
                     "GetSortedAsync", "SetIncrementSortedAsync", "OnUpdate"}),
                 DevCameraOcclusionMode = def_enum({"Zoom", "Invisicam"}),
