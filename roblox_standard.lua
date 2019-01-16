@@ -22,6 +22,8 @@ local function def_enum(field_list)
       fields[field] = enum
    end
 
+   fields["GetEnumItems"] = read_only
+
    return { fields = fields }
 end
 
