@@ -230,6 +230,7 @@ local function write_types(indent, output)
 		"new",
 		"fromRGB",
 		"fromHSV",
+		"toHSV",
 	})
 	write_item(output, indent, "ColorSequence", {"new"})
 	write_item(output, indent, "ColorSequenceKeypoint", {"new"})
