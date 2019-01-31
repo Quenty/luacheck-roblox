@@ -446,7 +446,7 @@ stds.roblox = {
                     "OutOfMemory", "TimedOut", "TooManyRedirects", "InvalidRedirect", "NetFail",
                     "Aborted", "SslConnectFail", "Unknown"}),
                 HttpRequestType = def_enum({"Default", "MarketplaceService", "Players", "Chat",
-                    "Avatar", "Analytics"}),
+                    "Avatar", "Analytics", "Localization"}),
                 HumanoidDisplayDistanceType = def_enum({"Viewer", "Subject", "None"}),
                 HumanoidHealthDisplayType = def_enum({"DisplayWhenDamaged", "AlwaysOn",
                     "AlwaysOff"}),
@@ -675,6 +675,7 @@ stds.testez = {
 stds.plugin = {
 	read_globals = {
 		"plugin",
+		"DebuggerManager",
 	}
 }
 

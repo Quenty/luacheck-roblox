@@ -331,6 +331,7 @@ stds.testez = {
 stds.plugin = {
 	read_globals = {
 		"plugin",
+		"DebuggerManager",
 	}
 }
 
