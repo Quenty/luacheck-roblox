@@ -335,9 +335,7 @@ stds.plugin = {
 	}
 }
 
-ignore = {
-	"212", -- unused arguments
-}
+ignore = {}
 
 std = "lua51+roblox"
 

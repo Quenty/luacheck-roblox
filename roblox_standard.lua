@@ -152,7 +152,6 @@ stds.roblox = {
                 FallenPartsDestroyHeight = read_write;
                 FilteringEnabled = read_write;
                 Gravity = read_write;
-                PGSPhysicsSolverEnabled = read_write;
                 StreamingEnabled = read_write;
                 StreamingMinRadius = read_write;
                 StreamingTargetRadius = read_write;
@@ -304,6 +303,7 @@ stds.roblox = {
                 ActionType = def_enum({"Nothing", "Pause", "Lose", "Draw", "Win"}),
                 ActuatorRelativeTo = def_enum({"Attachment0", "Attachment1", "World"}),
                 ActuatorType = def_enum({"None", "Motor", "Servo"}),
+                AlignType = def_enum({"Parallel", "Perpendicular"}),
                 AnimationPriority = def_enum({"Idle", "Movement", "Action", "Core"}),
                 AppShellActionType = def_enum({"None", "OpenApp", "TapChatTab",
                     "TapConversationEntry", "TapAvatarTab", "ReadConversation", "TapGamePageTab",
@@ -510,7 +510,7 @@ stds.roblox = {
                     "Sand", "Fabric", "SmoothPlastic", "Metal", "WoodPlanks", "Cobblestone", "Air",
                     "Water", "Rock", "Glacier", "Snow", "Sandstone", "Mud", "Basalt", "Ground",
                     "CrackedLava", "Neon", "Glass", "Asphalt", "LeafyGrass", "Salt", "Limestone",
-                    "Pavement"}),
+                    "Pavement", "ForceField"}),
                 MembershipType = def_enum({"None", "BuildersClub", "TurboBuildersClub",
                     "OutrageousBuildersClub"}),
                 MeshType = def_enum({"Head", "Torso", "Wedge", "Prism", "Pyramid", "ParallelRamp",
@@ -611,7 +611,7 @@ stds.roblox = {
                     "Hinge", "Motor", "SteppingMotor", "SmoothNoOutlines"}),
                 SwipeDirection = def_enum({"Right", "Left", "Up", "Down", "None"}),
                 TableMajorAxis = def_enum({"RowMajor", "ColumnMajor"}),
-                Technology = def_enum({"Legacy", "Voxel"}),
+                Technology = def_enum({"Legacy", "Voxel", "Compatibility"}),
                 TeleportResult = def_enum({"Success", "Failure", "GameNotFound", "GameEnded",
                     "GameFull", "Unauthorized", "Flooded", "IsTeleporting"}),
                 TeleportState = def_enum({"RequestedFromServer", "Started", "WaitingForServer",
@@ -645,7 +645,7 @@ stds.roblox = {
                 UserInputType = def_enum({"MouseButton1", "MouseButton2", "MouseButton3",
                     "MouseWheel", "MouseMovement", "Touch", "Keyboard", "Focus", "Accelerometer",
                     "Gyro", "Gamepad1", "Gamepad2", "Gamepad3", "Gamepad4", "Gamepad5", "Gamepad6",
-                    "Gamepad7", "Gamepad8", "TextInput", "None"}),
+                    "Gamepad7", "Gamepad8", "TextInput", "InputMethod", "None"}),
                 VRTouchpad = def_enum({"Left", "Right"}),
                 VRTouchpadMode = def_enum({"Touch", "VirtualThumbstick", "ABXY"}),
                 VerticalAlignment = def_enum({"Center", "Top", "Bottom"}),
@@ -679,9 +679,7 @@ stds.plugin = {
 	}
 }
 
-ignore = {
-	"212", -- unused arguments
-}
+ignore = {}
 
 std = "lua51+roblox"
 
