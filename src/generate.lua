@@ -1,4 +1,4 @@
-local OUTPUT_FILE = "roblox_standard.lua"
+local OUTPUT_FILE = ".luacheckrc"
 local TAB = "    "
 local MAX_LINE_LENGTH = 100
 
