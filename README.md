@@ -7,6 +7,10 @@
 
 Generates the `roblox_standard.lua` file necessary to provide support for Roblox Lua in Luacheck.
 
+## Dependencies
+* luajson
+* luasocket
+
 ## What is Luacheck
 If you're using Roblox outside of Roblox Studio, [Luacheck](https://github.com/mpeterv/luacheck) is a linter that will analyze your code for you.
 
