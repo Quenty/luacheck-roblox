@@ -11,7 +11,7 @@ Generates the `.luacheckrc` file necessary to provide support for Roblox Lua in 
 * Install luacheck!
 * Copy .luacheckrc into the root directory of your project
 
-## Dependencies
+## Build dependencies
 * luajson
 * luasocket
 
