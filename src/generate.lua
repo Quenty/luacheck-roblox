@@ -152,7 +152,7 @@ local function has_tag(tags, value)
 end
 
 local function is_value_category(member,category)
-	return 	member.ValueType and 
+	return 	member.ValueType and
 			member.ValueType.Category == category -- only compare category, as classname can be specific, but luacheck can't infer that statically
 end
 
@@ -312,6 +312,20 @@ local function write_libraries(indent, output)
 		"nfcnormalize",
 		"nfdnormalize",
 		"charpattern",
+	})
+	write_item(output, indent, "bit32", {
+		"arshift",
+		"band",
+		"bnot",
+		"bor",
+		"btest",
+		"bxor",
+		"extract",
+		"replace",
+		"lrotate",
+		"lshift",
+		"rrotate",
+		"rshift",
 	})
 end
 
