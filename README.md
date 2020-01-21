@@ -5,7 +5,11 @@
 	</a>
 </div>
 
-Generates the `roblox_standard.lua` file necessary to provide support for Roblox Lua in Luacheck.
+Generates the `.luacheckrc` file necessary to provide support for Roblox Lua in Luacheck.
+
+## Installation
+* Install luacheck!
+* Copy .luacheckrc into the root directory of your project
 
 ## Dependencies
 * luajson
@@ -32,6 +36,6 @@ Here are some examples of the .luacheck in action. Traditional .luacheckrc files
 To run you need Lua (5.1 or higher). Running the script will pull the latest version of the Roblox API and then pull in the latest Enums and game/workspace properties.
 
 ## Usage
-You can copy the contents of `roblox_standard.lua` into your `.luacheckrc`
+You can copy the contents of `.luacheckrc` into your `.luacheckrc`
 
 Inspired by [luacheck-love](https://github.com/Positive07/luacheck-love).
