@@ -327,6 +327,20 @@ local function write_libraries(indent, output)
 		"rrotate",
 		"rshift",
 	})
+	write_item(output, indent, "string", {
+		"byte",
+		"char",
+		"find",
+		"format",
+		"gmatch",
+		"gsub",
+		"len",
+		"lower",
+		"match",
+		"rep",
+		"reverse",
+		"split",
+	})
 end
 
 local function write_foot(output)
