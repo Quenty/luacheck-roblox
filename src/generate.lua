@@ -15,11 +15,11 @@ local function get_api()
 		local jsonDump = existing:read("*all")
 		existing:close()
 
-		return assert(json:decode(jsonDump))
+		return assert(json.decode(jsonDump))
 	end
 
 	local jsonDump = assert(http.request(("http://setup.roblox.com/%s-API-Dump.json"):format(version)))
-	local api = assert(json:decode(jsonDump))
+	local api = assert(json.decode(jsonDump))
 
 	local file = assert(io.open(path, "w"))
 	file:write(jsonDump)
@@ -249,7 +249,11 @@ local function write_types(indent, output)
 	write_item(output, indent, "Region3int16", {"new"})
 	write_item(output, indent, "TweenInfo", {"new"})
 	write_item(output, indent, "UDim", {"new"})
-	write_item(output, indent, "UDim2", {"new"})
+	write_item(output, indent, "UDim2", {
+		"new",
+		"fromScale",
+		"fromOffset"
+	})
 	write_item(output, indent, "Vector2", {"new"})
 	write_item(output, indent, "Vector2int16", {"new"})
 	write_item(output, indent, "Vector3", {
@@ -296,6 +300,25 @@ local function write_libraries(indent, output)
 		"tanh",
 		"huge",
 		"pi",
+	})
+	write_item(output, indent, "table", {
+		"concat",
+		"foreach",
+		"foreachi",
+		"getn",
+		"insert",
+		"remove",
+		"sort",
+		"pack",
+		"unpack",
+		"move",
+		"create",
+		"find",
+	})
+	write_item(output, indent, "os", {
+		"time",
+		"difftime",
+		"date"
 	})
 	write_item(output, indent, "debug", {
 		"traceback",
