@@ -193,6 +193,7 @@ local function write_methods(indent, output)
 		"version";
 		"wait";
 		"warn";
+		"UserSettings";
 	}
 
 	for _, item in pairs(METHODS) do
