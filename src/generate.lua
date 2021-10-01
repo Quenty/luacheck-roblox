@@ -95,7 +95,7 @@ local function write_fields(items, indent, str)
 	str = indent .. str
 
 	for _, item in ipairs(items) do
-		local name = ("\"%s\", "):format(item)
+		local name = ("%q, "):format(item)
 		if #(str .. name) > MAX_LINE_LENGTH then
 			str = str:sub(1, -2) -- strip whitespace
 			table.insert(fields, str)
@@ -156,6 +156,14 @@ local function is_value_category(member,category)
 			member.ValueType.Category == category -- only compare category, as classname can be specific, but luacheck can't infer that statically
 end
 
+local function escape_table_key(name)
+	if name:find(" ") or name:find("\"") then
+		return ("[%q]"):format(name)
+	else
+		return name
+	end
+end
+
 --- Used for script, datamodel, and workspace which are global variables
 local function write_class(output, indent, name, class_cache, class_name)
 	local members = get_all_members(class_cache, class_name)
@@ -172,7 +180,7 @@ local function write_class(output, indent, name, class_cache, class_name)
 			elseif is_value_category(member, "Class") then -- is not readonly and the member type a roblox class?
 				mode = "read_write_class"
 			end
-			local output_type = member.Name .. (" = %s;"):format(mode)
+			local output_type = escape_table_key(member.Name) .. (" = %s;"):format(mode)
 			table.insert(output, indent .. TAB:rep(2) .. output_type)
 		end
 	end
@@ -242,6 +250,7 @@ local function write_types(indent, output)
 	write_item(output, indent, "NumberRange", {"new"})
 	write_item(output, indent, "NumberSequence", {"new"})
 	write_item(output, indent, "NumberSequenceKeypoint", {"new"})
+	write_item(output, indent, "OverlapParams", {"new"})
 	write_item(output, indent, "PhysicalProperties", {"new"})
 	write_item(output, indent, "Random", {"new"})
 	write_item(output, indent, "Ray", {"new"})
@@ -321,7 +330,8 @@ local function write_libraries(indent, output)
 	write_item(output, indent, "os", {
 		"time",
 		"difftime",
-		"date"
+		"date",
+		"clock"
 	})
 	write_item(output, indent, "debug", {
 		"traceback",
@@ -366,6 +376,12 @@ local function write_libraries(indent, output)
 		"rep",
 		"reverse",
 		"split",
+	})
+	write_item(output, indent, "task", {
+		"spawn",
+		"defer",
+		"delay",
+		"wait",
 	})
 end
 
