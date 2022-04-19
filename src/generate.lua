@@ -229,7 +229,9 @@ local function write_types(indent, output)
 	})
 	write_item(output, indent, "CFrame", {
 		"new",
+		"lookAt",
 		"fromEulerAnglesXYZ",
+		"fromEulerAnglesYZX",
 		"Angles",
 		"fromOrientation",
 		"fromAxisAngle",
@@ -314,6 +316,7 @@ local function write_libraries(indent, output)
 		"tanh",
 	})
 	write_item(output, indent, "table", {
+		"clone",
 		"concat",
 		"foreach",
 		"foreachi",
