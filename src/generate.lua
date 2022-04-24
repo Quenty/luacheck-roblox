@@ -316,12 +316,15 @@ local function write_libraries(indent, output)
 		"tanh",
 	})
 	write_item(output, indent, "table", {
+		"clear",
 		"clone",
 		"concat",
 		"foreach",
 		"foreachi",
+		"freeze",
 		"getn",
 		"insert",
+		"isfrozen",
 		"remove",
 		"sort",
 		"pack",
