@@ -388,6 +388,7 @@ local function write_libraries(indent, output)
 		"defer",
 		"delay",
 		"wait",
+		"cancel",
 	})
 end
 
